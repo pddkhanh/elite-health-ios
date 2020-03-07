@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Day")
+                Text("Week")
+                Text("Month")
+                Text("Year")
+            }.font(.title)
+            .navigationBarTitle("Running")
+        }
     }
 }
 
