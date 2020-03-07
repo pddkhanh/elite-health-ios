@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF84FF79241335080089CD4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF78241335080089CD4F /* AppDelegate.swift */; };
+		CF84FF7B241335080089CD4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7A241335080089CD4F /* SceneDelegate.swift */; };
+		CF84FF7E241335080089CD4F /* EliteHealth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */; };
+		CF84FF80241335080089CD4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7F241335080089CD4F /* ContentView.swift */; };
+		CF84FF82241335090089CD4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF81241335090089CD4F /* Assets.xcassets */; };
+		CF84FF85241335090089CD4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF84241335090089CD4F /* Preview Assets.xcassets */; };
+		CF84FF88241335090089CD4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF86241335090089CD4F /* LaunchScreen.storyboard */; };
+		CF84FF93241335090089CD4F /* EliteHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF92241335090089CD4F /* EliteHealthTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF84FF8F241335090089CD4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF84FF6D241335080089CD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF84FF74241335080089CD4F;
+			remoteInfo = EliteHealth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF84FF75241335080089CD4F /* EliteHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliteHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF84FF78241335080089CD4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF84FF7A241335080089CD4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EliteHealth.xcdatamodel; sourceTree = "<group>"; };
+		CF84FF7F241335080089CD4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF84FF81241335090089CD4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF84FF84241335090089CD4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF84FF87241335090089CD4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF84FF89241335090089CD4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF84FF8E241335090089CD4F /* EliteHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EliteHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF84FF92241335090089CD4F /* EliteHealthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliteHealthTests.swift; sourceTree = "<group>"; };
+		CF84FF94241335090089CD4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF84FF72241335080089CD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF84FF8B241335090089CD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF84FF6C241335080089CD4F = {
+			isa = PBXGroup;
+			children = (
+				CF84FF77241335080089CD4F /* EliteHealth */,
+				CF84FF91241335090089CD4F /* EliteHealthTests */,
+				CF84FF76241335080089CD4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF84FF76241335080089CD4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF84FF75241335080089CD4F /* EliteHealth.app */,
+				CF84FF8E241335090089CD4F /* EliteHealthTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF84FF77241335080089CD4F /* EliteHealth */ = {
+			isa = PBXGroup;
+			children = (
+				CF84FF78241335080089CD4F /* AppDelegate.swift */,
+				CF84FF7A241335080089CD4F /* SceneDelegate.swift */,
+				CF84FF7F241335080089CD4F /* ContentView.swift */,
+				CF84FF81241335090089CD4F /* Assets.xcassets */,
+				CF84FF86241335090089CD4F /* LaunchScreen.storyboard */,
+				CF84FF89241335090089CD4F /* Info.plist */,
+				CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */,
+				CF84FF83241335090089CD4F /* Preview Content */,
+			);
+			path = EliteHealth;
+			sourceTree = "<group>";
+		};
+		CF84FF83241335090089CD4F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CF84FF84241335090089CD4F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF84FF91241335090089CD4F /* EliteHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF84FF92241335090089CD4F /* EliteHealthTests.swift */,
+				CF84FF94241335090089CD4F /* Info.plist */,
+			);
+			path = EliteHealthTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF84FF74241335080089CD4F /* EliteHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF84FF97241335090089CD4F /* Build configuration list for PBXNativeTarget "EliteHealth" */;
+			buildPhases = (
+				CF84FF71241335080089CD4F /* Sources */,
+				CF84FF72241335080089CD4F /* Frameworks */,
+				CF84FF73241335080089CD4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EliteHealth;
+			productName = EliteHealth;
+			productReference = CF84FF75241335080089CD4F /* EliteHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF84FF8D241335090089CD4F /* EliteHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF84FF9A241335090089CD4F /* Build configuration list for PBXNativeTarget "EliteHealthTests" */;
+			buildPhases = (
+				CF84FF8A241335090089CD4F /* Sources */,
+				CF84FF8B241335090089CD4F /* Frameworks */,
+				CF84FF8C241335090089CD4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF84FF90241335090089CD4F /* PBXTargetDependency */,
+			);
+			name = EliteHealthTests;
+			productName = EliteHealthTests;
+			productReference = CF84FF8E241335090089CD4F /* EliteHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF84FF6D241335080089CD4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Khanh Pham";
+				TargetAttributes = {
+					CF84FF74241335080089CD4F = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					CF84FF8D241335090089CD4F = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = CF84FF74241335080089CD4F;
+					};
+				};
+			};
+			buildConfigurationList = CF84FF70241335080089CD4F /* Build configuration list for PBXProject "EliteHealth" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF84FF6C241335080089CD4F;
+			productRefGroup = CF84FF76241335080089CD4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF84FF74241335080089CD4F /* EliteHealth */,
+				CF84FF8D241335090089CD4F /* EliteHealthTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF84FF73241335080089CD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF84FF88241335090089CD4F /* LaunchScreen.storyboard in Resources */,
+				CF84FF85241335090089CD4F /* Preview Assets.xcassets in Resources */,
+				CF84FF82241335090089CD4F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF84FF8C241335090089CD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF84FF71241335080089CD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF84FF7E241335080089CD4F /* EliteHealth.xcdatamodeld in Sources */,
+				CF84FF79241335080089CD4F /* AppDelegate.swift in Sources */,
+				CF84FF80241335080089CD4F /* ContentView.swift in Sources */,
+				CF84FF7B241335080089CD4F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF84FF8A241335090089CD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF84FF93241335090089CD4F /* EliteHealthTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF84FF90241335090089CD4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF84FF74241335080089CD4F /* EliteHealth */;
+			targetProxy = CF84FF8F241335090089CD4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF84FF86241335090089CD4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF84FF87241335090089CD4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF84FF95241335090089CD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF84FF96241335090089CD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF84FF98241335090089CD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"EliteHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EliteHealth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.EliteHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF84FF99241335090089CD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"EliteHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EliteHealth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.EliteHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF84FF9B241335090089CD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				INFOPLIST_FILE = EliteHealthTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.EliteHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EliteHealth.app/EliteHealth";
+			};
+			name = Debug;
+		};
+		CF84FF9C241335090089CD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				INFOPLIST_FILE = EliteHealthTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.EliteHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EliteHealth.app/EliteHealth";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF84FF70241335080089CD4F /* Build configuration list for PBXProject "EliteHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF84FF95241335090089CD4F /* Debug */,
+				CF84FF96241335090089CD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF84FF97241335090089CD4F /* Build configuration list for PBXNativeTarget "EliteHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF84FF98241335090089CD4F /* Debug */,
+				CF84FF99241335090089CD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF84FF9A241335090089CD4F /* Build configuration list for PBXNativeTarget "EliteHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF84FF9B241335090089CD4F /* Debug */,
+				CF84FF9C241335090089CD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */,
+			);
+			currentVersion = CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */;
+			path = EliteHealth.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CF84FF6D241335080089CD4F /* Project object */;
+}
