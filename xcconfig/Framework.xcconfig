@@ -1,0 +1,11 @@
+//
+//  Framework.xcconfig
+//  EliteHealth
+//
+//  Created by Khanh Pham on 7/3/20.
+//  Copyright © 2020 Khanh Pham. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+MACH_O_TYPE = staticlib;
