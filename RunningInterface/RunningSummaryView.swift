@@ -32,9 +32,15 @@ struct RunningSummaryView: View {
     }
 }
 
+#if DEBUG
+
+import HealthData
+
 struct RunningSummaryView_Previews: PreviewProvider {
     static var previews: some View {
         RunningSummaryView()
-        .environmentObject(RunningStore())
+            .environmentObject(RunningStore(healthKitManager: HealthKitManager()))
     }
 }
+
+#endif

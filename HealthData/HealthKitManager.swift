@@ -10,38 +10,13 @@ import Foundation
 import HealthKit
 import Combine
 
-public struct RunningWorkout {
-    public var startDate: Date
-    public var endDate: Date
-    public var duration: TimeInterval
-    public var totalDistance: Double
-
-    public init(
-        startDate: Date,
-        endDate: Date,
-        duration: TimeInterval,
-        totalDistance: Double) {
-        self.startDate = startDate
-        self.endDate = endDate
-        self.duration = duration
-        self.totalDistance = totalDistance
-    }
-
-    init(workout: HKWorkout) {
-        let distance = workout.totalDistance?.doubleValue(for: HKUnit.meter()) ?? 0
-        self.init(startDate: workout.startDate, endDate: workout.endDate, duration: workout.duration, totalDistance: distance)
-    }
-}
-
-public protocol HealthKitManaging {
-    func isHealthDataAvailable() -> Bool
-    func loadRunningWorkouts(from date: Date) -> Future<[RunningWorkout], Error>
-    func requestReadWorkoutsPermission() -> Future<Bool, Error>
-}
-
 public final class HealthKitManager: HealthKitManaging {
 
     private let healthStore = HKHealthStore()
+    private let hkObjectTypes = Set([
+        HKObjectType.workoutType(),
+        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
+    ])
 
     public init() {}
 
@@ -49,21 +24,25 @@ public final class HealthKitManager: HealthKitManaging {
         HKHealthStore.isHealthDataAvailable()
     }
 
-    public func requestReadWorkoutsPermission() -> Future<Bool, Error> {
-        return Future { promise in
-            let allTypes = Set([
-                HKObjectType.workoutType(),
-                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
-                ])
-            self.healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
-                if let error = error {
-                    promise(.failure(error))
-                } else {
-                    promise(.success(success))
-                }
-            }
-        }
-    }
+//    public func hasReadWorkoutsPermission() -> Bool {
+//        hkObjectTypes.map(healthStore.authorizationStatus(for:)).map { $0 == .sharingAuthorized}
+//    }
+//
+//    public func requestReadWorkoutsPermission() -> Future<Bool, Error> {
+//        return Future { promise in
+//            let allTypes = Set([
+//                HKObjectType.workoutType(),
+//                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
+//                ])
+//            self.healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
+//                if let error = error {
+//                    promise(.failure(error))
+//                } else {
+//                    promise(.success(success))
+//                }
+//            }
+//        }
+//    }
 
     public func loadRunningWorkouts(from date: Date) -> Future<[RunningWorkout], Error> {
         let runningPredicate = HKQuery.predicateForWorkouts(with: .running)
@@ -87,5 +66,12 @@ public final class HealthKitManager: HealthKitManaging {
               }
             self.healthStore.execute(query)
         }
+    }
+}
+
+private extension RunningWorkout {
+    init(workout: HKWorkout) {
+        let distance = workout.totalDistance?.doubleValue(for: HKUnit.meter()) ?? 0
+        self.init(startDate: workout.startDate, endDate: workout.endDate, duration: workout.duration, totalDistance: distance)
     }
 }

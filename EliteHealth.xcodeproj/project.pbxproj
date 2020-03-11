@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF84000424139ED60089CD4F /* HealthDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84000324139ED60089CD4F /* HealthDataTests.swift */; };
 		CF84000624139ED60089CD4F /* HealthData.h in Headers */ = {isa = PBXBuildFile; fileRef = CF84FFF624139ED60089CD4F /* HealthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF84000924139ED60089CD4F /* HealthData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFF424139ED60089CD4F /* HealthData.framework */; };
-		CF84000A24139ED60089CD4F /* HealthData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFF424139ED60089CD4F /* HealthData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CF8400142413A0260089CD4F /* HealthKitDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8400132413A0260089CD4F /* HealthKitDataReader.swift */; };
+		CF8400142413A0260089CD4F /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8400132413A0260089CD4F /* HealthKitManager.swift */; };
 		CF84001824150C330089CD4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84001724150C330089CD4F /* HealthKit.framework */; };
+		CF84001A241526C50089CD4F /* HealthKitManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF840019241526C50089CD4F /* HealthKitManaging.swift */; };
+		CF84001C241526D80089CD4F /* RunningWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84001B241526D80089CD4F /* RunningWorkout.swift */; };
+		CF84001E2415272E0089CD4F /* RunningWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84001D2415272E0089CD4F /* RunningWorkoutTests.swift */; };
+		CF84002124152B390089CD4F /* HealthData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFF424139ED60089CD4F /* HealthData.framework */; };
 		CF84FF79241335080089CD4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF78241335080089CD4F /* AppDelegate.swift */; };
 		CF84FF7B241335080089CD4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7A241335080089CD4F /* SceneDelegate.swift */; };
 		CF84FF7E241335080089CD4F /* EliteHealth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */; };
@@ -23,7 +24,6 @@
 		CF84FFD0241395E80089CD4F /* RunningInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFC7241395E80089CD4F /* RunningInterface.framework */; };
 		CF84FFD9241395E80089CD4F /* RunningInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = CF84FFC9241395E80089CD4F /* RunningInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF84FFDC241395E80089CD4F /* RunningInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFC7241395E80089CD4F /* RunningInterface.framework */; };
-		CF84FFDD241395E80089CD4F /* RunningInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFC7241395E80089CD4F /* RunningInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF84FFE4241395F40089CD4F /* RunningSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FFC0241361910089CD4F /* RunningSummaryView.swift */; };
 		CF84FFE62413970F0089CD4F /* DistanceFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FFE52413970F0089CD4F /* DistanceFormatterTests.swift */; };
 		CF84FFE8241397200089CD4F /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FFE7241397200089CD4F /* DistanceFormatter.swift */; };
@@ -31,6 +31,11 @@
 		CF84FFEC24139A270089CD4F /* RunningSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FFEB24139A270089CD4F /* RunningSummary.swift */; };
 		CF84FFEE24139B720089CD4F /* RunningFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FFED24139B720089CD4F /* RunningFactory.swift */; };
 		CF84FFFD24139ED60089CD4F /* HealthData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFF424139ED60089CD4F /* HealthData.framework */; };
+		CFCF6C142418745700E8DCCD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCF6C0B2418745700E8DCCD /* Common.framework */; };
+		CFCF6C1D2418745700E8DCCD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = CFCF6C0D2418745700E8DCCD /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFCF6C2A2418746B00E8DCCD /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF6C292418746B00E8DCCD /* DateExtensions.swift */; };
+		CFCF6C2C2418747900E8DCCD /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF6C2B2418747900E8DCCD /* DateExtensionsTests.swift */; };
+		CFCF6C2D24187A0700E8DCCD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCF6C0B2418745700E8DCCD /* Common.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +46,7 @@
 			remoteGlobalIDString = CF84FF74241335080089CD4F;
 			remoteInfo = EliteHealth;
 		};
-		CF84000724139ED60089CD4F /* PBXContainerItemProxy */ = {
+		CF84001F24152B340089CD4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF84FF6D241335080089CD4F /* Project object */;
 			proxyType = 1;
@@ -83,30 +88,38 @@
 			remoteGlobalIDString = CF84FFF324139ED60089CD4F;
 			remoteInfo = HealthData;
 		};
+		CFCF6C152418745700E8DCCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF84FF6D241335080089CD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFCF6C0A2418745700E8DCCD;
+			remoteInfo = Common;
+		};
+		CFCF6C172418745700E8DCCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF84FF6D241335080089CD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF84FF74241335080089CD4F;
+			remoteInfo = EliteHealth;
+		};
+		CFCF6C2E24187A0B00E8DCCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF84FF6D241335080089CD4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFCF6C0A2418745700E8DCCD;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CF84FFBC241361740089CD4F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CF84000A24139ED60089CD4F /* HealthData.framework in Embed Frameworks */,
-				CF84FFDD241395E80089CD4F /* RunningInterface.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		CF84000324139ED60089CD4F /* HealthDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataTests.swift; sourceTree = "<group>"; };
 		CF84000524139ED60089CD4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF84001224139F100089CD4F /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
-		CF8400132413A0260089CD4F /* HealthKitDataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataReader.swift; sourceTree = "<group>"; };
+		CF8400132413A0260089CD4F /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		CF84001524150C330089CD4F /* EliteHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EliteHealth.entitlements; sourceTree = "<group>"; };
 		CF84001724150C330089CD4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CF840019241526C50089CD4F /* HealthKitManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManaging.swift; sourceTree = "<group>"; };
+		CF84001B241526D80089CD4F /* RunningWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningWorkout.swift; sourceTree = "<group>"; };
+		CF84001D2415272E0089CD4F /* RunningWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningWorkoutTests.swift; sourceTree = "<group>"; };
 		CF84FF75241335080089CD4F /* EliteHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliteHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF84FF78241335080089CD4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF84FF7A241335080089CD4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +146,13 @@
 		CF84FFF624139ED60089CD4F /* HealthData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthData.h; sourceTree = "<group>"; };
 		CF84FFF724139ED60089CD4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF84FFFC24139ED60089CD4F /* HealthDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFCF6C0B2418745700E8DCCD /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFCF6C0D2418745700E8DCCD /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CFCF6C0E2418745700E8DCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFCF6C132418745700E8DCCD /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFCF6C1C2418745700E8DCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFCF6C292418746B00E8DCCD /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		CFCF6C2B2418747900E8DCCD /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF84001824150C330089CD4F /* HealthKit.framework in Frameworks */,
-				CF84000924139ED60089CD4F /* HealthData.framework in Frameworks */,
 				CF84FFDC241395E80089CD4F /* RunningInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCF6C2D24187A0700E8DCCD /* Common.framework in Frameworks */,
+				CF84002124152B390089CD4F /* HealthData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,14 +204,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFCF6C082418745700E8DCCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFCF6C102418745700E8DCCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFCF6C142418745700E8DCCD /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CF84000224139ED60089CD4F /* HealthDataTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF84000324139ED60089CD4F /* HealthDataTests.swift */,
 				CF84000524139ED60089CD4F /* Info.plist */,
+				CF84001D2415272E0089CD4F /* RunningWorkoutTests.swift */,
 			);
 			path = HealthDataTests;
 			sourceTree = "<group>";
@@ -221,6 +257,8 @@
 				CF84FFD5241395E80089CD4F /* RunningInterfaceTests */,
 				CF84FFF524139ED60089CD4F /* HealthData */,
 				CF84000224139ED60089CD4F /* HealthDataTests */,
+				CFCF6C0C2418745700E8DCCD /* Common */,
+				CFCF6C192418745700E8DCCD /* CommonTests */,
 				CF84FF76241335080089CD4F /* Products */,
 				CF84001624150C330089CD4F /* Frameworks */,
 			);
@@ -235,6 +273,8 @@
 				CF84FFCF241395E80089CD4F /* RunningInterfaceTests.xctest */,
 				CF84FFF424139ED60089CD4F /* HealthData.framework */,
 				CF84FFFC24139ED60089CD4F /* HealthDataTests.xctest */,
+				CFCF6C0B2418745700E8DCCD /* Common.framework */,
+				CFCF6C132418745700E8DCCD /* CommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,9 +339,30 @@
 			children = (
 				CF84FFF624139ED60089CD4F /* HealthData.h */,
 				CF84FFF724139ED60089CD4F /* Info.plist */,
-				CF8400132413A0260089CD4F /* HealthKitDataReader.swift */,
+				CF84001B241526D80089CD4F /* RunningWorkout.swift */,
+				CF840019241526C50089CD4F /* HealthKitManaging.swift */,
+				CF8400132413A0260089CD4F /* HealthKitManager.swift */,
 			);
 			path = HealthData;
+			sourceTree = "<group>";
+		};
+		CFCF6C0C2418745700E8DCCD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CFCF6C0D2418745700E8DCCD /* Common.h */,
+				CFCF6C0E2418745700E8DCCD /* Info.plist */,
+				CFCF6C292418746B00E8DCCD /* DateExtensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CFCF6C192418745700E8DCCD /* CommonTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFCF6C1C2418745700E8DCCD /* Info.plist */,
+				CFCF6C2B2418747900E8DCCD /* DateExtensionsTests.swift */,
+			);
+			path = CommonTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +384,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFCF6C062418745700E8DCCD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFCF6C1D2418745700E8DCCD /* Common.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -333,13 +402,11 @@
 				CF84FF71241335080089CD4F /* Sources */,
 				CF84FF72241335080089CD4F /* Frameworks */,
 				CF84FF73241335080089CD4F /* Resources */,
-				CF84FFBC241361740089CD4F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CF84FFDB241395E80089CD4F /* PBXTargetDependency */,
-				CF84000824139ED60089CD4F /* PBXTargetDependency */,
 			);
 			name = EliteHealth;
 			productName = EliteHealth;
@@ -376,6 +443,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				CFCF6C2F24187A0B00E8DCCD /* PBXTargetDependency */,
+				CF84002024152B340089CD4F /* PBXTargetDependency */,
 			);
 			name = RunningInterface;
 			productName = RunningInterface;
@@ -438,6 +507,43 @@
 			productReference = CF84FFFC24139ED60089CD4F /* HealthDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CFCF6C0A2418745700E8DCCD /* Common */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFCF6C272418745700E8DCCD /* Build configuration list for PBXNativeTarget "Common" */;
+			buildPhases = (
+				CFCF6C062418745700E8DCCD /* Headers */,
+				CFCF6C072418745700E8DCCD /* Sources */,
+				CFCF6C082418745700E8DCCD /* Frameworks */,
+				CFCF6C092418745700E8DCCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common;
+			productName = Common;
+			productReference = CFCF6C0B2418745700E8DCCD /* Common.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CFCF6C122418745700E8DCCD /* CommonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFCF6C282418745700E8DCCD /* Build configuration list for PBXNativeTarget "CommonTests" */;
+			buildPhases = (
+				CFCF6C0F2418745700E8DCCD /* Sources */,
+				CFCF6C102418745700E8DCCD /* Frameworks */,
+				CFCF6C112418745700E8DCCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFCF6C162418745700E8DCCD /* PBXTargetDependency */,
+				CFCF6C182418745700E8DCCD /* PBXTargetDependency */,
+			);
+			name = CommonTests;
+			productName = CommonTests;
+			productReference = CFCF6C132418745700E8DCCD /* CommonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -469,6 +575,15 @@
 					};
 					CF84FFFB24139ED60089CD4F = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+						TestTargetID = CF84FF74241335080089CD4F;
+					};
+					CFCF6C0A2418745700E8DCCD = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+					CFCF6C122418745700E8DCCD = {
+						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = CF84FF74241335080089CD4F;
 					};
 				};
@@ -492,6 +607,8 @@
 				CF84FFCE241395E80089CD4F /* RunningInterfaceTests */,
 				CF84FFF324139ED60089CD4F /* HealthData */,
 				CF84FFFB24139ED60089CD4F /* HealthDataTests */,
+				CFCF6C0A2418745700E8DCCD /* Common */,
+				CFCF6C122418745700E8DCCD /* CommonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -536,6 +653,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CF84FFFA24139ED60089CD4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFCF6C092418745700E8DCCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFCF6C112418745700E8DCCD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,7 +718,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8400142413A0260089CD4F /* HealthKitDataReader.swift in Sources */,
+				CF84001C241526D80089CD4F /* RunningWorkout.swift in Sources */,
+				CF84001A241526C50089CD4F /* HealthKitManaging.swift in Sources */,
+				CF8400142413A0260089CD4F /* HealthKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +728,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF84000424139ED60089CD4F /* HealthDataTests.swift in Sources */,
+				CF84001E2415272E0089CD4F /* RunningWorkoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFCF6C072418745700E8DCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFCF6C2A2418746B00E8DCCD /* DateExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFCF6C0F2418745700E8DCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFCF6C2C2418747900E8DCCD /* DateExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,10 +756,10 @@
 			target = CF84FF74241335080089CD4F /* EliteHealth */;
 			targetProxy = CF84000024139ED60089CD4F /* PBXContainerItemProxy */;
 		};
-		CF84000824139ED60089CD4F /* PBXTargetDependency */ = {
+		CF84002024152B340089CD4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF84FFF324139ED60089CD4F /* HealthData */;
-			targetProxy = CF84000724139ED60089CD4F /* PBXContainerItemProxy */;
+			targetProxy = CF84001F24152B340089CD4F /* PBXContainerItemProxy */;
 		};
 		CF84FF90241335090089CD4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -636,6 +785,21 @@
 			isa = PBXTargetDependency;
 			target = CF84FFF324139ED60089CD4F /* HealthData */;
 			targetProxy = CF84FFFE24139ED60089CD4F /* PBXContainerItemProxy */;
+		};
+		CFCF6C162418745700E8DCCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFCF6C0A2418745700E8DCCD /* Common */;
+			targetProxy = CFCF6C152418745700E8DCCD /* PBXContainerItemProxy */;
+		};
+		CFCF6C182418745700E8DCCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF84FF74241335080089CD4F /* EliteHealth */;
+			targetProxy = CFCF6C172418745700E8DCCD /* PBXContainerItemProxy */;
+		};
+		CFCF6C2F24187A0B00E8DCCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFCF6C0A2418745700E8DCCD /* Common */;
+			targetProxy = CFCF6C2E24187A0B00E8DCCD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -714,6 +878,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28B4UGC4GQ;
 				INFOPLIST_FILE = HealthDataTests/Info.plist;
@@ -724,6 +889,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.HealthDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EliteHealth.app/EliteHealth";
@@ -734,6 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28B4UGC4GQ;
 				INFOPLIST_FILE = HealthDataTests/Info.plist;
@@ -867,7 +1034,6 @@
 		CF84FF98241335090089CD4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EliteHealth/EliteHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -889,7 +1055,6 @@
 		CF84FF99241335090089CD4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EliteHealth/EliteHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1051,6 +1216,105 @@
 			};
 			name = Release;
 		};
+		CFCF6C232418745700E8DCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF84001224139F100089CD4F /* Framework.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CFCF6C242418745700E8DCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF84001224139F100089CD4F /* Framework.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Common/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CFCF6C252418745700E8DCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.CommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EliteHealth.app/EliteHealth";
+			};
+			name = Debug;
+		};
+		CFCF6C262418745700E8DCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28B4UGC4GQ;
+				INFOPLIST_FILE = CommonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pddkhanh.CommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EliteHealth.app/EliteHealth";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1113,6 +1377,24 @@
 			buildConfigurations = (
 				CF84FFE2241395E90089CD4F /* Debug */,
 				CF84FFE3241395E90089CD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFCF6C272418745700E8DCCD /* Build configuration list for PBXNativeTarget "Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFCF6C232418745700E8DCCD /* Debug */,
+				CFCF6C242418745700E8DCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFCF6C282418745700E8DCCD /* Build configuration list for PBXNativeTarget "CommonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFCF6C252418745700E8DCCD /* Debug */,
+				CFCF6C262418745700E8DCCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

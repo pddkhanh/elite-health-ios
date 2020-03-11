@@ -8,10 +8,11 @@
 
 import SwiftUI
 import CoreData
+import HealthData
 
 public struct RunningFactory {
     public static func createSummaryView(context: NSManagedObjectContext) -> some View {
         RunningSummaryView()
-            .environmentObject(RunningStore())
+            .environmentObject(RunningStore(healthKitManager: HealthKitManager()))
     }
 }
