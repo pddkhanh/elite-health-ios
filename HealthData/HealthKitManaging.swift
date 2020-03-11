@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 public protocol HealthKitManaging {
-    func isHealthDataAvailable() -> Bool
+    var isHealthDataAvailable: Bool { get }
     func loadRunningWorkouts(from date: Date) -> Future<[RunningWorkout], Error>
-//    func requestReadWorkoutsPermission() -> Future<Bool, Error>
+    func requestReadWorkoutsPermission() -> Future<Bool, Error>
 }

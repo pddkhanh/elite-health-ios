@@ -13,8 +13,16 @@ import HealthData
 import Common
 
 final class RunningStore: ObservableObject {
+
+    enum Availability {
+        case notDetermined
+        case healthDataNotAvailable
+        case permissionDenied
+        case permissionGranted
+    }
+
     @Published var summary: RunningSummary = .empty
-    @Published var isHealthDataAvailable = true
+    @Published var availability = Availability.notDetermined
 
     let healthKitManager: HealthKitManaging
     private var cancellables = Set<AnyCancellable>()
@@ -24,29 +32,56 @@ final class RunningStore: ObservableObject {
     }
 
     func fetch() {
-        guard healthKitManager.isHealthDataAvailable() else {
-            isHealthDataAvailable = false
+        guard healthKitManager.isHealthDataAvailable else {
+            availability = .healthDataNotAvailable
             summary = .empty
             return
         }
-        isHealthDataAvailable = true
 
         let fromDate = Date().firstDayOfYear
-        healthKitManager.loadRunningWorkouts(from: fromDate)
+        healthKitManager.requestReadWorkoutsPermission()
+            .flatMap { [unowned self] success in
+                return self.healthKitManager
+                    .loadRunningWorkouts(from: fromDate)
+                    .receive(on: DispatchQueue.main)
+            }
+            .eraseToAnyPublisher()
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        print("Error load workouts: \(error.localizedDescription)")
+                    case .finished:
+                        break
+                    }
+                },
+                receiveValue: { [weak self] workouts in
+                    guard let self = self else { return }
+                    self.availability = .permissionGranted
+                    self.summary = self.parseFetchWorkoutResult(workouts)
+                })
+            .store(in: &cancellables)
+    }
+
+    private func requestPermission() {
+        healthKitManager.requestReadWorkoutsPermission()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    print("Error load workouts: \(error.localizedDescription)")
+                    print("Error request permission: \(error.localizedDescription)")
                 case .finished:
                     break
                 }
-            }, receiveValue: { [weak self] workouts in
+            }, receiveValue: { [weak self] success in
                 guard let self = self else { return }
-                self.summary = self.parseFetchWorkoutResult(workouts)
+                print("Request health permission result: \(success)")
+                if success {
+                    self.fetch()
+                }
             })
             .store(in: &cancellables)
-
     }
 
     private func parseFetchWorkoutResult(_ workouts: [RunningWorkout]) -> RunningSummary {

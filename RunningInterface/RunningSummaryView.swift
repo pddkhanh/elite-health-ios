@@ -15,20 +15,41 @@ struct RunningSummaryView: View {
     private let formatter = DistanceFormatter()
 
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Day: \(formatter.textInKm(store.summary.dayDistance))")
-                Text("Week: \(formatter.textInKm(store.summary.weekDistance))")
-                Text("Month: \(formatter.textInKm(store.summary.monthDistance))")
-                Text("Year: \(formatter.textInKm(store.summary.yearDistance))")
+        Group {
+            if store.availability == .notDetermined {
+                Text("...")
             }
-            .font(.title)
-            .navigationBarTitle("Running")
-        }.onAppear(perform: loadData)
+            else if store.availability == .healthDataNotAvailable {
+                Text("HealthKit is not available on this device")
+            } else if store.availability == .permissionDenied {
+                Button("Permission denied. Enable it to load your workouts summary") {
+                    self.openSetting()
+                }
+            } else {
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Today: \(formatter.textInKm(store.summary.dayDistance))")
+                    Text("This week: \(formatter.textInKm(store.summary.weekDistance))")
+                    Text("This month: \(formatter.textInKm(store.summary.monthDistance))")
+                    Text("This year: \(formatter.textInKm(store.summary.yearDistance))")
+                }
+                .font(.title)
+            }
+        }
+        .onAppear(perform: loadData)
+        .onTapGesture(perform: loadData)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification), perform: { _ in
+            self.loadData()
+        })
     }
 
     private func loadData() {
+        print("RunningSummaryView: loadData")
         store.fetch()
+    }
+
+    private func openSetting() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url)
     }
 }
 

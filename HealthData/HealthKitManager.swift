@@ -15,34 +15,27 @@ public final class HealthKitManager: HealthKitManaging {
     private let healthStore = HKHealthStore()
     private let hkObjectTypes = Set([
         HKObjectType.workoutType(),
-        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
+//        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
     ])
 
     public init() {}
 
-    public func isHealthDataAvailable() -> Bool {
+    public var isHealthDataAvailable: Bool {
         HKHealthStore.isHealthDataAvailable()
     }
 
-//    public func hasReadWorkoutsPermission() -> Bool {
-//        hkObjectTypes.map(healthStore.authorizationStatus(for:)).map { $0 == .sharingAuthorized}
-//    }
-//
-//    public func requestReadWorkoutsPermission() -> Future<Bool, Error> {
-//        return Future { promise in
-//            let allTypes = Set([
-//                HKObjectType.workoutType(),
-//                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
-//                ])
-//            self.healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
-//                if let error = error {
-//                    promise(.failure(error))
-//                } else {
-//                    promise(.success(success))
-//                }
-//            }
-//        }
-//    }
+    public func requestReadWorkoutsPermission() -> Future<Bool, Error> {
+        let allTypes = hkObjectTypes
+        return Future { promise in
+            self.healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(success))
+                }
+            }
+        }
+    }
 
     public func loadRunningWorkouts(from date: Date) -> Future<[RunningWorkout], Error> {
         let runningPredicate = HKQuery.predicateForWorkouts(with: .running)

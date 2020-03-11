@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF17D6542418D72000E680B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17D6532418D72000E680B3 /* ContentView.swift */; };
 		CF84000624139ED60089CD4F /* HealthData.h in Headers */ = {isa = PBXBuildFile; fileRef = CF84FFF624139ED60089CD4F /* HealthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF8400142413A0260089CD4F /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8400132413A0260089CD4F /* HealthKitManager.swift */; };
 		CF84001824150C330089CD4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84001724150C330089CD4F /* HealthKit.framework */; };
@@ -16,7 +17,6 @@
 		CF84002124152B390089CD4F /* HealthData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF84FFF424139ED60089CD4F /* HealthData.framework */; };
 		CF84FF79241335080089CD4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF78241335080089CD4F /* AppDelegate.swift */; };
 		CF84FF7B241335080089CD4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7A241335080089CD4F /* SceneDelegate.swift */; };
-		CF84FF7E241335080089CD4F /* EliteHealth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */; };
 		CF84FF82241335090089CD4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF81241335090089CD4F /* Assets.xcassets */; };
 		CF84FF85241335090089CD4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF84241335090089CD4F /* Preview Assets.xcassets */; };
 		CF84FF88241335090089CD4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF84FF86241335090089CD4F /* LaunchScreen.storyboard */; };
@@ -112,6 +112,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF17D6532418D72000E680B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF84000524139ED60089CD4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF84001224139F100089CD4F /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		CF8400132413A0260089CD4F /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		CF84FF75241335080089CD4F /* EliteHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliteHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF84FF78241335080089CD4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF84FF7A241335080089CD4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EliteHealth.xcdatamodel; sourceTree = "<group>"; };
 		CF84FF81241335090089CD4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF84FF84241335090089CD4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF84FF87241335090089CD4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 				CF84FF81241335090089CD4F /* Assets.xcassets */,
 				CF84FF86241335090089CD4F /* LaunchScreen.storyboard */,
 				CF84FF89241335090089CD4F /* Info.plist */,
-				CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */,
 				CF84FF83241335090089CD4F /* Preview Content */,
+				CF17D6532418D72000E680B3 /* ContentView.swift */,
 			);
 			path = EliteHealth;
 			sourceTree = "<group>";
@@ -680,9 +680,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF84FF7E241335080089CD4F /* EliteHealth.xcdatamodeld in Sources */,
 				CF84FF79241335080089CD4F /* AppDelegate.swift in Sources */,
 				CF84FF7B241335080089CD4F /* SceneDelegate.swift in Sources */,
+				CF17D6542418D72000E680B3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,19 +1400,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CF84FF7C241335080089CD4F /* EliteHealth.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */,
-			);
-			currentVersion = CF84FF7D241335080089CD4F /* EliteHealth.xcdatamodel */;
-			path = EliteHealth.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CF84FF6D241335080089CD4F /* Project object */;
 }
