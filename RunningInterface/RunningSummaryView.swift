@@ -31,6 +31,7 @@ struct RunningSummaryView: View {
                     Text("This week: \(formatter.textInKm(store.summary.weekDistance))")
                     Text("This month: \(formatter.textInKm(store.summary.monthDistance))")
                     Text("This year: \(formatter.textInKm(store.summary.yearDistance))")
+                    Text("Last year: \(formatter.textInKm(store.summary.lastYearDistance))")
                 }
                 .font(.title)
             }

@@ -21,18 +21,21 @@ struct RunningSummary {
     var weekDistance: Double
     var monthDistance: Double
     var yearDistance: Double
+    var lastYearDistance: Double
 
     init(date: Date,
          dayDistance: Double,
          weekDistance: Double,
          monthDistance: Double,
-         yearDistance: Double) {
+         yearDistance: Double,
+         lastYearDistance: Double) {
         self.date = date
         self.dayDistance = dayDistance
         self.weekDistance = weekDistance
         self.monthDistance = monthDistance
         self.yearDistance = yearDistance
+        self.lastYearDistance = lastYearDistance
     }
 
-    static let empty = RunningSummary(date: Date(timeIntervalSince1970: 0), dayDistance: 0, weekDistance: 0, monthDistance: 0, yearDistance: 0)
+    static let empty = RunningSummary(date: Date(timeIntervalSince1970: 0), dayDistance: 0, weekDistance: 0, monthDistance: 0, yearDistance: 0, lastYearDistance: 0)
 }

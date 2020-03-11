@@ -38,7 +38,7 @@ final class RunningStore: ObservableObject {
             return
         }
 
-        let fromDate = Date().firstDayOfYear
+        let fromDate = Date().firstDayPreviousYear
         healthKitManager.requestReadWorkoutsPermission()
             .flatMap { [unowned self] success in
                 return self.healthKitManager
@@ -86,7 +86,8 @@ final class RunningStore: ObservableObject {
 
     private func parseFetchWorkoutResult(_ workouts: [RunningWorkout]) -> RunningSummary {
         let date = Date()
-        var yearDistance = 0.0, monthDistance = 0.0, weekDistance = 0.0, dayDistance = 0.0
+        var yearDistance = 0.0, monthDistance = 0.0, weekDistance = 0.0, dayDistance = 0.0, lastYearDistance = 0.0
+        let startOfPreviousYear = date.firstDayPreviousYear
         let startOfDay = date.startOfDay
         let startOfYear = date.firstDayOfYear
         let startOfMonth = date.firstDayOfMonth
@@ -104,13 +105,17 @@ final class RunningStore: ObservableObject {
             if workout.endDate > startOfWeek {
                 weekDistance += workout.totalDistance
             }
+            if workout.endDate > startOfPreviousYear && workout.endDate < startOfYear {
+                lastYearDistance += workout.totalDistance
+            }
         }
         return RunningSummary(
             date: date,
             dayDistance: dayDistance,
             weekDistance: weekDistance,
             monthDistance: monthDistance,
-            yearDistance: yearDistance
+            yearDistance: yearDistance,
+            lastYearDistance: lastYearDistance
         )
     }
 }

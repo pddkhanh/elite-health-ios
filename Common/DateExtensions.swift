@@ -18,6 +18,10 @@ public extension Date {
         return calendar.date(from: components)!
     }
 
+    var firstDayPreviousYear: Date {
+        return calendar.date(byAdding: .year, value: -1, to: firstDayOfYear)!
+    }
+
     var firstDayOfMonth: Date {
         let components = calendar.dateComponents([.year, .month], from: self)
         return calendar.date(from: components)!

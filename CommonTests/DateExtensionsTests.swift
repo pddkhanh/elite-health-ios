@@ -17,9 +17,11 @@ final class DateExtensionsTests: XCTestCase {
         let firstDayOfYear = calendar.date(from: DateComponents(calendar: calendar, year: 2020, month: 1, day: 1))!
         let firstDayOfMonth = calendar.date(from: DateComponents(calendar: calendar, year: 2020, month: 3, day: 1))!
         let firstDayOfWeek = calendar.date(from: DateComponents(calendar: calendar, year: 2020, month: 3, day: 8))!
+        let firstDayPreviousYear = calendar.date(from: DateComponents(calendar: calendar, year: 2019, month: 1, day: 1))!
         XCTAssertEqual(date.firstDayOfYear, firstDayOfYear)
         XCTAssertEqual(date.firstDayOfMonth, firstDayOfMonth)
         XCTAssertEqual(date.firstDayOfWeek, firstDayOfWeek)
+        XCTAssertEqual(date.firstDayPreviousYear, firstDayPreviousYear)
     }
 
     func testFirstDayOfWeekExtended() {
