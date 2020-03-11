@@ -6,6 +6,8 @@
 	<false/>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Show your running workouts summary</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>Show your running workouts summary</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
