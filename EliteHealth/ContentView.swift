@@ -15,6 +15,6 @@ struct ContentView: View {
         NavigationView {
             RunningFactory.createSummaryView()
             .navigationBarTitle("Running")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -8,6 +8,20 @@
 
 import SwiftUI
 
+struct ActivityIndicator: UIViewRepresentable {
+
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+    }
+}
+
 struct RunningSummaryView: View {
 
     @EnvironmentObject var store: RunningStore
@@ -17,10 +31,10 @@ struct RunningSummaryView: View {
     var body: some View {
         Group {
             if store.availability == .notDetermined {
-                Text("...")
+                ActivityIndicator(isAnimating: .constant(true), style: .large)
             }
             else if store.availability == .healthDataNotAvailable {
-                Text("HealthKit is not available on this device")
+                Text("Health data is unavailable on this device")
             } else if store.availability == .permissionDenied {
                 Button("Permission denied. Enable it to load your workouts summary") {
                     self.openSetting()

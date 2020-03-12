@@ -12,13 +12,17 @@ import Combine
 
 public final class HealthKitManager: HealthKitManaging {
 
-    private let healthStore = HKHealthStore()
+    private var healthStore: HKHealthStore!
     private let hkObjectTypes = Set([
         HKObjectType.workoutType(),
 //        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
     ])
 
-    public init() {}
+    public init() {
+        if HKHealthStore.isHealthDataAvailable() {
+            healthStore = HKHealthStore()
+        }
+    }
 
     public var isHealthDataAvailable: Bool {
         HKHealthStore.isHealthDataAvailable()
