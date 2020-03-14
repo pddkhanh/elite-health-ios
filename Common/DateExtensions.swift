@@ -8,6 +8,14 @@
 
 import Foundation
 
+public extension Calendar {
+    static var appCalendar: Calendar {
+        var cal = Calendar.current
+        cal.firstWeekday = 2
+        return cal
+    }
+}
+
 public extension Date {
     var startOfDay: Date {
         calendar.startOfDay(for: self)
@@ -32,5 +40,7 @@ public extension Date {
         return calendar.date(from: components)!
     }
 
-    private var calendar: Calendar { Calendar.current }
+    private var calendar: Calendar {
+        Calendar.appCalendar
+    }
 }

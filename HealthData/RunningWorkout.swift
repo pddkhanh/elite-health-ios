@@ -25,3 +25,7 @@ public struct RunningWorkout {
         self.totalDistance = totalDistance
     }
 }
+
+public extension RunningWorkout {
+    var pacePerKm: TimeInterval { (duration / (totalDistance / 1000)) }
+}

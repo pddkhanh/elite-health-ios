@@ -27,6 +27,15 @@ struct RunningSummaryView: View {
     @EnvironmentObject var store: RunningStore
 
     private let formatter = DistanceFormatter()
+    private let paceFormatter = PaceFormatter()
+
+    init() {
+        // To remove only extra separators below the list:
+        UITableView.appearance().tableFooterView = UIView()
+
+        // To remove all separators including the actual ones:
+        UITableView.appearance().separatorStyle = .none
+    }
 
     var body: some View {
         Group {
@@ -40,14 +49,33 @@ struct RunningSummaryView: View {
                     self.openSetting()
                 }
             } else {
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Today: \(formatter.textInKm(store.summary.dayDistance))")
-                    Text("This week: \(formatter.textInKm(store.summary.weekDistance))")
-                    Text("This month: \(formatter.textInKm(store.summary.monthDistance))")
-                    Text("This year: \(formatter.textInKm(store.summary.yearDistance))")
-                    Text("Last year: \(formatter.textInKm(store.summary.lastYearDistance))")
+                List {
+                    VStack(alignment: .leading) {
+                        Text("Today").font(.headline)
+                        Spacer(minLength: 8)
+                        Text("Distance: \(formatter.textInKm(store.summary.day.distance)). Pace: \(paceFormatter.textInMinutesPerKm(store.summary.day.paceSecondPerKm))")
+                    }.padding()
+                    VStack(alignment: .leading) {
+                        Text("This week").font(.headline)
+                        Spacer(minLength: 8)
+                        Text("Distance: \(formatter.textInKm(store.summary.week.distance)). Pace: \(paceFormatter.textInMinutesPerKm(store.summary.week.paceSecondPerKm))")
+                    }.padding()
+                    VStack(alignment: .leading) {
+                        Text("This month").font(.headline)
+                        Spacer(minLength: 8)
+                        Text("Distance: \(formatter.textInKm(store.summary.month.distance)). Pace: \(paceFormatter.textInMinutesPerKm(store.summary.month.paceSecondPerKm))")
+                    }.padding()
+                    VStack(alignment: .leading) {
+                        Text("This year").font(.headline)
+                        Spacer(minLength: 8)
+                        Text("Distance: \(formatter.textInKm(store.summary.year.distance)). Pace: \(paceFormatter.textInMinutesPerKm(store.summary.year.paceSecondPerKm))")
+                    }.padding()
+                    VStack(alignment: .leading) {
+                        Text("Last year").font(.headline)
+                        Spacer(minLength: 8)
+                        Text("Distance: \(formatter.textInKm(store.summary.lastYear.distance)). Pace: \(paceFormatter.textInMinutesPerKm(store.summary.lastYear.paceSecondPerKm))")
+                    }.padding()
                 }
-                .font(.title)
             }
         }
         .onAppear(perform: loadData)

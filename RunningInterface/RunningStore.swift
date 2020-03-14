@@ -86,37 +86,54 @@ final class RunningStore: ObservableObject {
 
     private func parseFetchWorkoutResult(_ workouts: [RunningWorkout]) -> RunningSummary {
         let date = Date()
-        var yearDistance = 0.0, monthDistance = 0.0, weekDistance = 0.0, dayDistance = 0.0, lastYearDistance = 0.0
+        var yearWorkouts: [RunningWorkout] = []
+        var monthWorkouts: [RunningWorkout] = []
+        var weekWorkouts: [RunningWorkout] = []
+        var dayWorkouts: [RunningWorkout] = []
+        var lastYearWorkouts: [RunningWorkout] = []
+
         let startOfPreviousYear = date.firstDayPreviousYear
         let startOfDay = date.startOfDay
         let startOfYear = date.firstDayOfYear
         let startOfMonth = date.firstDayOfMonth
-        let startOfWeek = date.firstDayOfWeek.addingTimeInterval(86400)
+        let startOfWeek = date.firstDayOfWeek // .addingTimeInterval(86400)
+
         workouts.forEach { workout in
             if workout.endDate > startOfDay {
-                dayDistance += workout.totalDistance
+                dayWorkouts.append(workout)
             }
             if workout.endDate > startOfYear {
-                yearDistance += workout.totalDistance
+                yearWorkouts.append(workout)
             }
             if workout.endDate > startOfMonth {
-                monthDistance += workout.totalDistance
+                monthWorkouts.append(workout)
             }
             if workout.endDate > startOfWeek {
-                weekDistance += workout.totalDistance
+                weekWorkouts.append(workout)
             }
             if workout.endDate > startOfPreviousYear && workout.endDate < startOfYear {
-                lastYearDistance += workout.totalDistance
+                lastYearWorkouts.append(workout)
             }
         }
-        return RunningSummary(
+
+        let calculateInfo: ([RunningWorkout]) -> RunningSummaryInfo = { workouts in
+            guard !workouts.isEmpty else {
+                return .empty
+            }
+            let distance = workouts.map { $0.totalDistance }.reduce(0, +)
+            let duration = workouts.map { $0.duration }.reduce(0, +)
+            let pace = duration / (distance / 1000)
+            return RunningSummaryInfo(distance: distance, paceSecondPerKm: pace)
+        }
+        let rs = RunningSummary(
             date: date,
-            dayDistance: dayDistance,
-            weekDistance: weekDistance,
-            monthDistance: monthDistance,
-            yearDistance: yearDistance,
-            lastYearDistance: lastYearDistance
+            day: calculateInfo(dayWorkouts),
+            week: calculateInfo(weekWorkouts),
+            month: calculateInfo(monthWorkouts),
+            year: calculateInfo(yearWorkouts),
+            lastYear: calculateInfo(lastYearWorkouts)
         )
+        return rs
     }
 }
 

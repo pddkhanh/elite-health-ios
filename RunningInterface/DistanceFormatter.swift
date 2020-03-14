@@ -22,3 +22,11 @@ struct DistanceFormatter {
         return Internal.formatter.string(fromValue: rounded, unit: .kilometer)
     }
 }
+
+struct PaceFormatter {
+    func textInMinutesPerKm(_ pace: TimeInterval) -> String {
+        let minutes = Int(pace) / 60
+        let seconds = Int(pace) % 60
+        return "\(minutes)\"\(seconds)'"
+    }
+}

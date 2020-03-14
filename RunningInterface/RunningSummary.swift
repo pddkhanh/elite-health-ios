@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct RunningSummaryInfo {
+    var distance: Double = 0
+    var paceSecondPerKm: TimeInterval = 0
+
+    static let empty = RunningSummaryInfo()
+}
+
 /**
  Sumary for running data.
 
@@ -17,25 +24,11 @@ struct RunningSummary {
 
     var date: Date
 
-    var dayDistance: Double
-    var weekDistance: Double
-    var monthDistance: Double
-    var yearDistance: Double
-    var lastYearDistance: Double
+    var day: RunningSummaryInfo = .empty
+    var week: RunningSummaryInfo = .empty
+    var month: RunningSummaryInfo = .empty
+    var year: RunningSummaryInfo = .empty
+    var lastYear: RunningSummaryInfo = .empty
 
-    init(date: Date,
-         dayDistance: Double,
-         weekDistance: Double,
-         monthDistance: Double,
-         yearDistance: Double,
-         lastYearDistance: Double) {
-        self.date = date
-        self.dayDistance = dayDistance
-        self.weekDistance = weekDistance
-        self.monthDistance = monthDistance
-        self.yearDistance = yearDistance
-        self.lastYearDistance = lastYearDistance
-    }
-
-    static let empty = RunningSummary(date: Date(timeIntervalSince1970: 0), dayDistance: 0, weekDistance: 0, monthDistance: 0, yearDistance: 0, lastYearDistance: 0)
+    static let empty = RunningSummary(date: Date(timeIntervalSince1970: 0))
 }
